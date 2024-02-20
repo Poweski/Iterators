@@ -1,25 +1,13 @@
 # Iterators
-Second assignment for algorithms and data structures lab.
 
-a. Napisz klasę Array2<T> przechowującą tablicę dwuwymiarową (tablicę
-tablic) elementów typu T. Konstruktor klasy ma przyjmować tablicę liczb
-typu int określającą ile elementów ma przechowywać każda kolejna
-podtablica. Elementy inicjalizować wartością null. Klasa ma posiadać
-metody T get(int i, int j) oraz void set(T newElem, int i, int j) pozwalające
-na pobranie i zmianę elementu na pozycji (i, j). W przypadku błędu
-zwracać odpowiednie wyjątki,
+- **Array2<T>** - stores a two-dimensional array of elements of type T. The class constructor accepts an array of int numbers specifying how many elements each subsequent subarray should store. Elements are initialized with null. The class has methods T get(int i, int j), void set(T newElem, int i, int j) that allow you to retrieve and change the element at position (i, j).
 
-Wskazówka: JAVA nie pozwala na tworzenie tablic typów generycznych
-tzn. instrukcja T[] array = new T[N]; zakończy się błędem. W tym
-przypadku należy zastosować rzutowanie: T[] array = (T[]) new Object[N];
-powodujące jednak zgłoszenie ostrzeżenia. Ostrzeżenie można uciszyć
-zapisując przed powyższą linijką: @SuppressWarnings(„unchecked”).
+- **Array2Iterator<T>** - implements an iterator traversing two-dimensional arrays of type T (T[][]). This iterator first goes through the subsequent elements with index 0 of all subarrays, then after the elements with index 1, etc. If any subarray does not have an element with index k, it is skipped.
 
-b. Zdefiniuj klasę Array2Iterator<T> implementującą iterator przechodzący
-po tablicach dwuwymiarowych typu T (T[][]). Iterator ten ma przechodzić
-najpierw po kolejnych elementach o indeksie 0 wszystkich podtablic,
-potem po elementach o indeksie 1, itd. Jeżeli jakaś podtablica nie posiada
-elementu o indeksie k, to jest pomijana,
+- **KthElementIterator** - an iterator that takes another iterator as a base and returns each kth element from the collection.
 
-c. Zmodyfikować klasę Array2<T> tak, aby umożliwiała iterowanie po
-elementach z wykorzystaniem pętli foreach.
+- **FibonacciIterator** - implementation of the Fibbonaci number generator as an iterator.
+
+- **ShuffleIterator** - an iterator that accepts two other iterators and shuffles the input data collections. Example: if the first collection contains the numbers 1, 2, 3, 4, 5 and the second contains the sequence 11, 12, 13, the iterator created will access the element in the order 1, 11, 2, 12, 3, 13, 4, 5.
+
+- **PrimeIterator** - an iterator providing subsequent prime numbers smaller than the given N. The numbers are generated on an ongoing basis.
